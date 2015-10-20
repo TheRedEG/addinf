@@ -5,7 +5,7 @@
 ## Login   <denuit_m@epitech.net>
 ## 
 ## Started on  Fri Oct  9 09:26:08 2015 denuit mathieu
-## Last update Tue Oct 20 14:05:25 2015 denuit mathieu
+## Last update Tue Oct 20 15:57:45 2015 denuit mathieu
 ##
 
 CC	= gcc
@@ -19,7 +19,8 @@ LDFLAGS	= -Llib -lmy
 
 NAME	= infin_add
 
-SRCS	= main.c
+SRCS	= main.c \
+	  addinf.c
 
 OBJS	= $(SRCS:.c=.o)
 
