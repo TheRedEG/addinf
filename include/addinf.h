@@ -5,11 +5,11 @@
 ** Login   <denuit_m@epitech.net>
 ** 
 ** Started on  Tue Oct 20 10:37:23 2015 denuit mathieu
-** Last update Tue Oct 20 15:55:00 2015 denuit mathieu
+** Last update Tue Oct 20 21:33:49 2015 denuit mathieu
 */
 
-#ifndef ADDINF_H_
-#define ADDINF_H_
+#ifndef	ADDINF_H_
+#define	ADDINF_H_
 
 #include <stdlib.h>
 
@@ -43,4 +43,4 @@ char	do_subinf_carry(t_add_op *op, int *s1c, int *s2c, int *carry);
 int	do_addinf(t_add_op *op, int res_c, int add);
 char	*addinf(char *s1, char *s2);
 
-#endif
+#endif	/* !ADDINF_H_ */

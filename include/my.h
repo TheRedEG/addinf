@@ -5,11 +5,11 @@
 ** Login   <denuit_m@epitech.net>
 ** 
 ** Started on  Sun Oct 11 12:32:51 2015 denuit mathieu
-** Last update Tue Oct 20 16:13:30 2015 denuit mathieu
+** Last update Tue Oct 20 21:32:08 2015 denuit mathieu
 */
 
-#ifndef LIBMY_H_
-#define LIBMY_H_
+#ifndef	LIBMY_H_
+#define	LIBMY_H_
 
 void	my_putchar(char c);
 int	my_put_nbr(int nb);
@@ -25,4 +25,4 @@ char	*my_strdup(char *str);
 char	*my_strstr(char *str, char *to_find);
 int	my_isnumber(char *str);
 
-#endif
+#endif	/* !LIBMY_H_ */
