@@ -5,7 +5,7 @@
 ** Login   <denuit_m@epitech.net>
 ** 
 ** Started on  Tue Oct 20 10:28:52 2015 denuit mathieu
-** Last update Tue Oct 20 22:06:14 2015 denuit mathieu
+** Last update Tue Oct 20 22:21:46 2015 denuit mathieu
 */
 
 #include "my.h"
@@ -93,6 +93,8 @@ int	swap(char **s1, char **s2)
 
 int	main(int argc, char **argv)
 {
+  char	*str;
+
   if (argc != 3 || !my_isnumber(argv[1]) || !my_isnumber(argv[2]))
   {
     my_putstr("Usage: ");
@@ -101,7 +103,11 @@ int	main(int argc, char **argv)
   }
   else
   {
-    my_putstr(addinf(argv[1], argv[2]));
+    str = addinf(argv[1], argv[2]);
+    if (my_strlen(str) == 2 && str[0] == '-' && str[1] == '0')
+      my_putchar('0');
+    else
+      my_putstr(str);
     my_putchar('\n');
   }
   return (0);
