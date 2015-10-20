@@ -5,7 +5,7 @@
 ** Login   <denuit_m@epitech.net>
 ** 
 ** Started on  Tue Oct 20 10:28:52 2015 denuit mathieu
-** Last update Tue Oct 20 15:56:07 2015 denuit mathieu
+** Last update Tue Oct 20 16:09:55 2015 denuit mathieu
 */
 
 #include "my.h"
@@ -91,7 +91,7 @@ int	swap(char **s1, char **s2)
 
 int	main(int argc, char **argv)
 {
-  if (argc != 3)
+  if (argc != 3 || !my_isnumber(argv[1]) || !my_isnumber(argv[2]))
   {
     my_putstr("Usage: ");
     my_putstr(argv[0]);
