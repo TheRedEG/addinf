@@ -5,7 +5,7 @@
 ** Login   <denuit_m@epitech.net>
 ** 
 ** Started on  Tue Oct 20 10:28:52 2015 denuit mathieu
-** Last update Tue Oct 20 16:09:55 2015 denuit mathieu
+** Last update Tue Oct 20 22:06:14 2015 denuit mathieu
 */
 
 #include "my.h"
@@ -33,21 +33,24 @@ void	fill_add_data(char **s1, char **s2, t_add_data *d)
 
 int	nb_greater(char *s1, char *s2)
 {
-  if (my_strlen(s1) > my_strlen(s2))
-    return (1);
-  else if (my_strlen(s2) > my_strlen(s1))
-    return (0);
-  while (*s1 != 0 && *s2 != 0 && *s1 == *s2)
-  {
+  int	len1;
+  int	len2;
+
+  while (*s1 == '0')
     s1 += 1;
+  if (*s1 == 0)
+    s1 -= 1;
+  while (*s2 == '0')
     s2 += 1;
-  }
-  if (*s2 == 0 && *s1)
+  if (*s2 == 0)
+    s2 -= 1;
+  len1 = my_strlen(s1);
+  len2 = my_strlen(s2);
+  if (len1 > len2)
     return (1);
-  else if (*s1 == 0 && *s2)
+  else if (len2 > len1)
     return (0);
-  else
-    return (*s1 > *s2);
+  return (my_strcmp(s1, s2) > 0);
 }
 
 void	make_add_op(char *s1, char *s2, t_add_data *d, t_add_op *op)
@@ -62,8 +65,7 @@ void	make_add_op(char *s1, char *s2, t_add_data *d, t_add_op *op)
     op->negate = (d->isneg1 && d->isneg2);
     op->add = 1;
   }
-  else if ((!d->isneg1 && d->isneg2) ||
-	   (d->isneg1 && swap(&op->s1, &op->s2)))
+  else if (!d->isneg1 || swap(&op->s1, &op->s2))
   {
     op->add = 0;
     if (nb_greater(op->s2, op->s1))

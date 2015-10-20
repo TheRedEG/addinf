@@ -5,7 +5,7 @@
 ** Login   <denuit_m@epitech.net>
 ** 
 ** Started on  Tue Oct 20 15:56:41 2015 denuit mathieu
-** Last update Tue Oct 20 16:02:17 2015 denuit mathieu
+** Last update Tue Oct 20 22:09:41 2015 denuit mathieu
 */
 
 #include "my.h"
@@ -60,8 +60,10 @@ int	do_addinf(t_add_op *op, int res_c, int add)
   carry = 0;
   while (s1_c >= 0)
   {
-    op->result[res_c] = add ? do_addinf_carry(op, &s1_c, &s2_c, &carry) :
-      do_subinf_carry(op, &s1_c, &s2_c, &carry);
+    if (add)
+      op->result[res_c] = do_addinf_carry(op, &s1_c, &s2_c, &carry);
+    else
+      op->result[res_c] = do_subinf_carry(op, &s1_c, &s2_c, &carry);
     res_c -= 1;
   }
   if (carry)
